@@ -1,0 +1,44 @@
+.searchBar {
+  background-color: #007DBA;
+  padding: 0 40px;
+  box-shadow: 0 0 5px #333;
+  height: 100px;
+  text-align: center;
+}
+
+.searchBar h1 {
+  color: #fafafa;
+  display: block;
+  font-size: 18px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.searchBar .searchInput {
+  display: inline-block;
+  color: #fafafa;
+}
+
+.searchBar .searchInput label {
+  line-height: 50px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+@media (min-width: 950px) {
+  .searchBar {
+    height: 80px;
+    text-align: right;
+  }
+
+  .searchBar h1 {
+    display: block;
+    float: left;
+    font-size: 24px;
+    line-height: 80px;
+  }
+
+  .searchBar .searchInput label {
+      line-height: 80px;
+  }
+}
