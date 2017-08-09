@@ -5,3 +5,7 @@ body {
   font-weight: light;
   min-width: 600px;
 }
+
+main {
+  padding: 40px;
+}

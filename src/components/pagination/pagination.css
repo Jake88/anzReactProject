@@ -1,0 +1,27 @@
+.top-bar {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.top-bar .next, .top-bar .prev {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: #007dba;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.top-bar .next:disabled, .top-bar .prev:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+.top-bar .next {
+  float: right;
+}
+
+.top-bar .prev {
+  float: left;
+}

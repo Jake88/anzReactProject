@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 import '../../shared.css'
 import './search-bar.css'
 
@@ -17,7 +18,11 @@ class SearchBar extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    this.props.searchCallback(this.state.username);
+    this.props.searchCallback({
+      searchString: this.state.username,
+      routerHistory: this.props.history,
+      page: 1
+    });
     this.setState({username: ''});
   }
 
@@ -51,13 +56,13 @@ class SearchBar extends Component {
 
   searchButton() {
     return (
-    <button 
-      id="searchButton"
-      disabled={!this.state.username}
-      type="submit" 
-      className="button--common">
-      Search
-    </button>
+      <button 
+        id="searchButton"
+        disabled={!this.state.username}
+        type="submit" 
+        className="button--common">
+        Search
+      </button>
     );
   }
 
@@ -74,4 +79,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
