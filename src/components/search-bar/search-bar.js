@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../shared.css'
 import './search-bar.css'
 
 class SearchBar extends Component {
@@ -24,6 +25,11 @@ class SearchBar extends Component {
     this.setState({username: event.target.value});
   }
 
+  /*
+    Developer note:
+      To save time I have not created individual form element components.
+      However I am aware that I can, and I can further extend those to create bespoke versions.
+  */
   searchInput() {
     return (
       <div className="searchInput">
@@ -44,7 +50,15 @@ class SearchBar extends Component {
   }
 
   searchButton() {
-    return <button type="submit" className="button--common">Search</button>
+    return (
+    <button 
+      id="searchButton"
+      disabled={!this.state.username}
+      type="submit" 
+      className="button--common">
+      Search
+    </button>
+    );
   }
 
   render() {

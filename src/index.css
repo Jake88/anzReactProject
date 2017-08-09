@@ -5,13 +5,3 @@ body {
   font-weight: light;
   min-width: 600px;
 }
-
-.input--common, .button--common {
-  padding: 10px 15px;
-  margin: 0 10px;
-  border: 1px solid #007;
-}
-
-.button--common {
-  background-color: #fafafa;
-}

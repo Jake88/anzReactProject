@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ApiManager from './utilities/api-manager/api-manager'
 import SearchBar from './components/search-bar/search-bar'
-import './App.css';
+import './shared.css'
 
 class App extends Component {
   constructor(props) {
