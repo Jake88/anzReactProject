@@ -14,6 +14,11 @@ class ApiManager {
       }
     });
   }
+
+  getGitHubUser({username}) {
+    if (!username) throw new Error('A username is required');
+    return axios.get(`${GITHUB_ROOT}/users/${username}`);
+  }
 }
 
 export default new ApiManager();

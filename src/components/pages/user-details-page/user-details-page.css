@@ -1,0 +1,45 @@
+.user-details-page .avatar {
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.user-details-page h1, .user-details-page h4 {
+  text-align: center;
+}
+
+.user-details-page dt,
+.user-details-page dd  {
+  display: inline-block;
+  width: 40%;
+  margin: 0;
+  padding: 10px 5%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-details-page dt {
+  font-weight: bold;
+}
+
+.user-details-page dd {
+  text-align: right;
+}
+
+.user-details-page .flex-row {
+  flex-direction: column;
+}
+
+@media (min-width: 950px) {
+  .user-details-page h1, .user-details-page h4 {
+    text-align: left;
+  }
+
+  .user-details-page .flex-row {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+  }
+}

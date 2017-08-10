@@ -18,11 +18,7 @@ class SearchBar extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    this.props.searchCallback({
-      searchString: this.state.username,
-      routerHistory: this.props.history,
-      page: 1
-    });
+    this.props.history.push(`/users?search=${this.state.username}&page=1`);    
     this.setState({username: ''});
   }
 

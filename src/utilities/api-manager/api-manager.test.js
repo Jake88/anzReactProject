@@ -43,5 +43,16 @@ describe('api-manager', () => {
       );
     });
   });
+
+   describe('getGitHubUser', () => {
+    it('should throw an error if no username is provided', () => {
+      expect(() => ApiManager.getGitHubUser()).toThrow();
+    });
+
+    it('should make a http get call to retrieve a search of users with default params', () => {
+      ApiManager.getGitHubUser({username: 'jake'});
+      expect(axios.get).toHaveBeenCalledWith('https://api.github.com/users/jake');
+    });
+   });
   
 });

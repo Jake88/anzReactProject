@@ -3,21 +3,6 @@ import { Constants } from '../../utilities/constants';
 import './pagination.css';
 
 class Pagination extends Component {
-  constructor(props) {
-    super(props);
-
-    Object.assign(this, {
-      searchCallback: this.searchCallback.bind(this)
-    });
-  }
-
-  searchCallback(newPageNumber) {
-    this.props.searchCallback({
-      page: newPageNumber,
-      routerHistory: this.props.history
-    });
-  }
-
   render() {
     const page = this.props.page;
     const searchResponse = this.props.searchResponse;
@@ -31,12 +16,12 @@ class Pagination extends Component {
     return (
       <div className="top-bar">
         <button 
-          onClick={() => this.searchCallback(page - 1)}
+          onClick={() => this.props.changePage(parseInt(page, 10) - 1)}
           className="prev"
           disabled={disablePrevBtnExpression}
         >Previous</button>
         <button 
-          onClick={() => this.searchCallback(page + 1)}
+          onClick={() => this.props.changePage(parseInt(page, 10) + 1)}
           className="next"
           disabled={disableNextBtnExpression}
         >Next</button>

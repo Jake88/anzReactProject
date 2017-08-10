@@ -5,17 +5,14 @@ import {mount, shallow} from 'enzyme';
 import SearchBar from './search-bar';
 
 describe('search-bar component', () => {
-  let element, callback;
+  let element;
 
   beforeEach(() => {
-    callback = jest.fn();
-    element = shallow(
-      <SearchBar/>
-    );
+    element = shallow(<SearchBar.WrappedComponent/>);
   });
 
   it('should render a form, input and button on load', () => {
-      expect(element.find('#searchInput').length).toBe(1);
+      expect(element.find('input').length).toBe(1);
       expect(element.find('#searchButton').length).toBe(1);
       expect(element.find('#searchForm').length).toBe(1);
   });
@@ -31,18 +28,18 @@ describe('search-bar component', () => {
     expect(element.find('button').prop('disabled')).toBe(false);
   });
 
-  it('should fire the callback function passed as props', () => {
+  it('should fire onSubmit when clicking the search button', () => {
     // Need to mount to ensure we can trigger a button click that fires submit
-    element = mount(
-      <SearchBar searchCallback={callback}/>
-    );
+    element = mount(<SearchBar.WrappedComponent/>);
+
+    spyOn(element.instance(), 'onSubmit').and.callThrough();
 
     const button = element.find('#searchButton');
     const input = element.find('#searchInput');
     input.simulate('change', {target: {value: 'anything'}});
 
-    expect(callback).not.toHaveBeenCalled();
     button.get(0).click();
-    expect(callback).toHaveBeenCalled();
+
+    expect(element.instance().onSubmit).toHaveBeenCalled();
   });
 });

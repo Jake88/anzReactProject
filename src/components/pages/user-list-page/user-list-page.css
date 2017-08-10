@@ -1,3 +1,11 @@
 .user-list {
   text-align: center;
 }
+
+.loading-label {
+  text-align: center;
+  font-size: 28px;
+  color: #007dba;
+  opacity: .5;
+  padding: 0 100px;
+}
